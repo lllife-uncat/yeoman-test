@@ -1,0 +1,85 @@
+<!doctype html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>HelloYeoman</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="bower_components/bootstrap.css/css/bootstrap.css">
+    <!-- endbuild -->
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-ui-sortable/src/sortable.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+
+</head>
+<body ng-app="HelloYeoman">
+<div ng-controller="HelloController">
+    <div>
+
+        <table class="table" ng-hide="true">
+            <tr>
+                <td></td>
+                <td>
+                    <label class="label label-important">Message</label>
+                    <label class="label label-success">{{message}}</label>
+                    <br/>
+                    <input placeholder="Enter message here." type="text" ng-model="message"/>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button class="btn btn-default fa fa-facebook"> Facebook</button>
+                    <button class="btn btn-default fa fa-youtube"> Youtube</button>
+                    <button class="btn btn-default fa fa-google-plus"> Google Plus</button>
+                </td>
+            </tr>
+        </table>
+
+        <div ui-sortable ng-model="items" style="margin: 20px;">
+            <div style="display: block" ng-repeat="item in items" class="my-repeat-animation">
+                <div ng-hide="item.hide" class="my-show-hide-animation" style="vertical-align:middle">
+                    <div style="display: block">
+                        <span class="fa fa-twitter label label-inverse">Tweets</span>
+                        <span class="label">{{item.text}}</span>
+                        <label class="label label-important fa fa-bug" ng-click="hide(item)"> </label>
+                    </div>
+                    <div style="display: inline">
+                        <input type="text" ng-model="item.text"/>
+                    </div>
+                    <hr/>
+                </div>
+            </div>
+
+            <button ng-click="addItem()" class="btn btn-info fa fa-twitter"> New Tweets</button>
+            <button class="btn btn-info fa fa-facebook"> Hello World</button>
+            <button class="btn btn-danger">Test</button>
+        </div>
+
+        <ul class="list logList">
+            <li ng-repeat="entry in sortingLog" class="logItem">{{entry.Text}}</li>
+        </ul>
+
+    </div>
+</div>
+
+
+
+</body>
+</html>

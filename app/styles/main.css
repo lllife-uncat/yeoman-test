@@ -1,0 +1,79 @@
+body {
+    background: #fafafa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+}
+
+.hero-unit {
+    margin: 50px auto 0 auto;
+    width: 300px;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 30px;
+    background-color: #eee;
+    border-radius: 6px;
+    padding: 60px;
+}
+
+.hero-unit h1 {
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+.my-repeat-animation.ng-enter,
+.my-repeat-animation.ng-leave,
+.my-repeat-animation.ng-move {
+    -webkit-transition: 0.5s linear all;
+    transition: 0.5s linear all;
+    position: relative;
+}
+
+.my-repeat-animation.ng-enter {
+    left: -10px;
+    opacity: 0;
+}
+
+.my-repeat-animation.ng-enter.ng-enter-active {
+    left: 0;
+    opacity: 1;
+}
+
+.my-repeat-animation.ng-leave {
+    left: 0;
+    opacity: 1;
+}
+
+.my-repeat-animation.ng-leave.ng-leave-active {
+    left: -10px;
+    opacity: 0;
+}
+
+.my-repeat-animation.ng-move {
+    opacity: 0.5;
+}
+
+.my-repeat-animation.ng-move.ng-move-active {
+    opacity: 1;
+}
+
+.my-show-hide-animation.ng-hide-add,
+.my-show-hide-animation.ng-hide-remove {
+    -webkit-transition: 0.5s linear all;
+    transition: 0.5s linear all;
+
+    /* remember to add this */
+    display: block !important;
+    opacity: 1;
+}
+
+.my-show-hide-animation.ng-hide {
+    opacity: 0;
+}
